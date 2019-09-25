@@ -13,20 +13,43 @@ import java.util.Scanner;
  */
 public class PrincipalCuenta {
 
+    static Scanner scanner = new Scanner(System.in);
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
         System.out.println("*************** Programa de Cuentas **************************");
-        double saldoInicial = 500000;
+
         System.out.println("\n" + "Ingrese el nombre del titular de la cuenta");
         String titular = scanner.next();
+
+        System.out.println("¿Desea ingresar saldo a la cuenta? S) SI  N) NO");
+        String opcionSaldo = scanner.next();
+
+        if (opcionSaldo.equals("S")) {
+            System.out.println("Ingrese el saldo: ");
+            double saldoInicial = scanner.nextDouble();
+            Cuenta cuenta = new Cuenta(titular, saldoInicial);
+            menu(cuenta);
+        } else {
+            Cuenta cuenta2 = new Cuenta(titular);
+            menu(cuenta2);
+        }
+
+    }
+
+    /**
+     * Permite seleccionar las opciones de operación que se pueden realizar
+     * sobre la cuenta
+     *
+     * @param cuenta contiene los datos ingresados para realizar la operacion
+     */
+    public static void menu(Cuenta cuenta) {
+
         System.out.println("Ingrese una opción: A) Ingresar B) Retirar S) Salir");
         String opcion = scanner.next();
-        Cuenta cuenta = new Cuenta(titular, saldoInicial);
 
         while (!opcion.equals("S")) {
 
@@ -46,8 +69,7 @@ public class PrincipalCuenta {
 
             System.out.println("Ingrese una opción: A) Ingresar B) Retirar S) Salir");
             opcion = scanner.next();
+
         }
-
     }
-
 }

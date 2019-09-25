@@ -18,10 +18,12 @@ public class Agenda {
         this.arrayContactoInfo = new Contacto[15];
     }
 
-    /*
-     Agrega un contacto a la agenda teniendo en cuenta, si no
-     puede agregar más a la agenda debe de informar al usuario “AGENDA SIN ESPACIO” y no
-     se pueden duplicar nombres en la agenda.
+    /**
+     * Agrega un contacto a la agenda teniendo en cuenta, si no puede agregar
+     * más a la agenda debe de informar al usuario “AGENDA SIN ESPACIO” y no se
+     * pueden duplicar nombres en la agenda.
+     *
+     * @param c es el contacto a agendar en la agenda con su información
      */
     public void agregarContacto(Contacto c) {
 
@@ -41,9 +43,11 @@ public class Agenda {
         }
     }
 
-    /*
-     Valida si existe o no el nombre de un contacto en la
-     agenda.
+    /**
+     * Valida si existe o no el nombre de un contacto en la agenda.
+     *
+     * @param nombre es el contacto a buscar en la agenda
+     * @return retorna si existe o no en la genda
      */
     public boolean buscarContacto(String nombre) {
 

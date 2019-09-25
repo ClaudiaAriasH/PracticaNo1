@@ -12,25 +12,8 @@ package practicano1.cuenta;
 public class Cuenta {
 //Atributos
 
-    String nombreTitular;
-    double saldo;
-
-//Getters and Setters
-    public String getNombreTitular() {
-        return nombreTitular;
-    }
-
-    public void setNombreTitular(String nombreTitular) {
-        this.nombreTitular = nombreTitular;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
+    private String nombreTitular;
+    private double saldo = 0;
 
     //Constructores
     public Cuenta(String nombreTitular) {
@@ -48,7 +31,7 @@ public class Cuenta {
     /**
      * Ingresa dinero en la cuenta bancaria
      *
-     * @param cantidad
+     * @param cantidad es la cantidad que se ingresa a la cuenta bancaria
      */
     public void ingresar(double cantidad) {
 
@@ -64,7 +47,7 @@ public class Cuenta {
     /**
      * Retirar dinero de la cuenta bancaria
      *
-     * @param cantidad
+     * @param cantidad es la cantidad que se va a retirar de cuenta
      */
     public void retirar(double cantidad) {
         System.out.println("La cantidad a retirar es: " + cantidad);
